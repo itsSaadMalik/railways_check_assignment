@@ -1,0 +1,18 @@
+enum Annexure09FieldnamesEnum {
+  wOnumber,
+  titleOfWork,
+  contractorName,
+  nameOfSupervisor,
+  designation,
+  dateofInspecton,
+  trainNumber,
+  trainArrivalTime,
+  trainDepartureTime,
+  totalTrainCoaches,
+  coachesAttended,
+  totalScoreObtained,
+  activity1,
+  activity2,
+  activity3,
+  activity4,
+}

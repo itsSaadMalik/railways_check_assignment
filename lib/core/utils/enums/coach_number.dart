@@ -1,0 +1,15 @@
+enum CoachNumber {
+  coach1,
+  coach2,
+  coach3,
+  coach4,
+  coach5,
+  coach6,
+  coach7,
+  coach8,
+  coach9,
+  coach10,
+  coach11,
+  coach12,
+  coach13,
+}
