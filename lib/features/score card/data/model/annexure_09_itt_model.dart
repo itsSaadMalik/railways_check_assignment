@@ -17,6 +17,7 @@ class Annexure09IttModel extends Annexuer09ITTCardEntity {
     required super.trainNumber,
     required super.trainArrivalTime,
     required super.trainDepartureTime,
+    // here we asssume there are 13 coaches by deafult if not mentioned
     required super.totalTrainCoaches,
     required super.coachesAttended,
     required super.totalScoreObtained,
@@ -25,7 +26,42 @@ class Annexure09IttModel extends Annexuer09ITTCardEntity {
     required super.activity3,
     required super.activity4,
   });
+  Annexure09IttModel copywith({
+    String? wOnumber,
+    String? titleOfWork,
+    String? contractorName,
+    String? nameOfSupervisor,
+    String? designation,
+    DateTime? dateofInspecton,
 
+    String? trainNumber,
+    DateTime? trainArrivalTime,
+    DateTime? trainDepartureTime,
+    int? totalTrainCoaches,
+    int? coachesAttended,
+    double? totalScoreObtained,
+    List<CoachActivity1Model?>? activity1,
+    List<int>? activity2,
+    List<CoachActivity3Model?>? activity3,
+    List<int>? activity4,
+  }) => Annexure09IttModel(
+    wOnumber: wOnumber ?? this.wOnumber,
+    titleOfWork: titleOfWork ?? this.titleOfWork,
+    contractorName: contractorName ?? this.contractorName,
+    nameOfSupervisor: nameOfSupervisor ?? this.nameOfSupervisor,
+    designation: designation ?? this.designation,
+    dateofInspecton: dateofInspecton ?? this.dateofInspecton,
+    trainNumber: trainNumber ?? this.trainNumber,
+    trainArrivalTime: trainArrivalTime ?? this.trainArrivalTime,
+    trainDepartureTime: trainDepartureTime ?? this.trainDepartureTime,
+    totalTrainCoaches: totalTrainCoaches ?? this.totalTrainCoaches,
+    coachesAttended: coachesAttended ?? this.coachesAttended,
+    totalScoreObtained: totalScoreObtained ?? this.totalScoreObtained,
+    activity1: activity1 ?? this.activity1,
+    activity2: activity2 ?? this.activity2,
+    activity3: activity3 ?? this.activity3,
+    activity4: activity4 ?? this.activity4,
+  );
   factory Annexure09IttModel.fromMap(Map<String, dynamic> data) {
     final activity1Data =
         (data[Annexure09FieldnamesEnum.activity1.feildname] != null)

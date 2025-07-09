@@ -18,9 +18,9 @@ class AppTheme {
       ),
     ),
     textTheme: TextTheme(
-      bodySmall: GoogleFonts.dmSans(fontSize: 13),
-      bodyMedium: GoogleFonts.dmSans(fontSize: 15),
-      bodyLarge: GoogleFonts.dmSans(fontSize: 17),
+      bodySmall: GoogleFonts.dmSans(fontSize: 10.5),
+      bodyMedium: GoogleFonts.dmSans(fontSize: 12.5),
+      bodyLarge: GoogleFonts.dmSans(fontSize: 15),
       titleSmall: GoogleFonts.dmSans(fontSize: 15.5),
       titleLarge: GoogleFonts.dmSans(fontSize: 15.5),
       titleMedium: GoogleFonts.dmSans(fontSize: 15.5),

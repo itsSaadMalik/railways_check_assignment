@@ -19,7 +19,19 @@ class CoachActivity1Model {
     required this.coachNumber,
     required this.coachID,
   });
-
+  CoachActivity1Model copyWith({
+    int? toilet1,
+    int? toilet2,
+    int? toilet3,
+    int? toilet4,
+  }) => CoachActivity1Model(
+    toilet1: toilet1 ?? this.toilet1,
+    toilet2: toilet2 ?? this.toilet2,
+    toilet3: toilet3 ?? this.toilet3,
+    toilet4: toilet4 ?? this.toilet4,
+    coachNumber: coachNumber,
+    coachID: coachID,
+  );
   factory CoachActivity1Model.fromMap(Map<String, dynamic> data) =>
       CoachActivity1Model(
         toilet1: data[ToiletNumber.t1.fieldname] ?? 0,

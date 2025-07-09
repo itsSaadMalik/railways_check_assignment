@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:railway_checks_assignment/core/utils/extensions/log_extension.dart';
 
 class RecordActivityButton extends StatelessWidget {
   const RecordActivityButton({
