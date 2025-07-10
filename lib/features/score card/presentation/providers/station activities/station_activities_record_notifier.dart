@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:railway_checks_assignment/core/utils/enums/field%20names%20enums/Annexure%20A-9/activity_3.dart';
+import 'package:railway_checks_assignment/core/utils/enums/field%20names%20enums/Annexure%20A-9/activity_3_score_field_enum.dart';
 import 'package:railway_checks_assignment/core/utils/enums/toilet_number.dart';
 import 'package:railway_checks_assignment/core/utils/extensions/log_extension.dart';
 import 'package:railway_checks_assignment/features/score%20card/data/model/annexure_09_itt_model.dart';
@@ -15,7 +15,7 @@ class StationActivitiesRecordNotifier
   }
 
   void updateActivity1({
-    required String coachID,
+    // required String coachID,
     required int updatedValue,
     required int index,
     required ToiletNumber toiletNumber,
@@ -64,26 +64,26 @@ class StationActivitiesRecordNotifier
   }
 
   void updateActivity3({
-    required Activity3 activity,
+    required Activity3ScoreFields activity,
     required int updatedValue,
     required int index,
   }) {
     switch (activity) {
-      case Activity3.b1:
+      case Activity3ScoreFields.b1:
         state.activity3[index] = state.activity3
             .elementAt(index)
             ?.copyWith(b1: updatedValue);
-      case Activity3.b2:
+      case Activity3ScoreFields.b2:
         state.activity3[index] = state.activity3
             .elementAt(index)
             ?.copyWith(b2: updatedValue);
 
-      case Activity3.d1:
+      case Activity3ScoreFields.d1:
         state.activity3[index] = state.activity3
             .elementAt(index)
             ?.copyWith(d1: updatedValue);
 
-      case Activity3.d2:
+      case Activity3ScoreFields.d2:
         state.activity3[index] = state.activity3
             .elementAt(index)
             ?.copyWith(d2: updatedValue);
@@ -181,19 +181,19 @@ final stationActivitiesProvider =
               coachID: 'coach_$i',
             ),
         ],
-        activity2: [for (int i = 0; i < 13; i++) 0],
+        activity2: [for (int i = 0; i < 13; i++) -1],
         activity3: [
           for (int i = 0; i < 13; i++)
             CoachActivity3Model(
-              b1: 0,
-              b2: 0,
-              d1: 0,
-              d2: 0,
+              b1: -1,
+              b2: -1,
+              d1: -1,
+              d2: -1,
               coachNumber: i,
               coachId: 'coach_$i',
             ),
         ],
-        activity4: [for (int i = 0; i < 13; i++) 0],
+        activity4: [for (int i = 0; i < 13; i++) -1],
       );
       return StationActivitiesRecordNotifier(preloadData);
     });

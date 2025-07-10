@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:railway_checks_assignment/core/utils/enums/toilet_number.dart';
 import 'package:railway_checks_assignment/core/utils/extensions/log_extension.dart';
-import 'package:railway_checks_assignment/core/utils/extensions/toilet_number_string.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/station_activities_record_notifier.dart';
 
-class Activity1DropdownWidget extends ConsumerWidget {
-  const Activity1DropdownWidget({
+class StationActivitiesDropdownWidget extends ConsumerWidget {
+  const StationActivitiesDropdownWidget({
     super.key,
     required this.coachIndex,
-    required this.toiletNumber,
+    // required this.toiletNumber,
     required this.val,
+    required this.onChanged,
+    required this.dropdownText,
   });
   List<int> get marks => [-1, 0, 1];
-  final ToiletNumber toiletNumber;
+  // final ToiletNumber toiletNumber;
   final int coachIndex;
+  final String dropdownText;
 
   final int val;
+  final ValueChanged onChanged;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
@@ -29,8 +32,8 @@ class Activity1DropdownWidget extends ConsumerWidget {
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            toiletNumber.name.toUpperCase(),
-
+            // toiletNumber.name.toUpperCase(),
+            dropdownText,
             style: Theme.of(
               context,
             ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
@@ -46,26 +49,20 @@ class Activity1DropdownWidget extends ConsumerWidget {
                 .map((e) => DropdownMenuItem(value: e, child: Text('$e')))
                 .toList(),
             value: val,
-            onChanged: (value) {
-              ref
-                  .read(stationActivitiesProvider.notifier)
-                  .updateActivity1(
-                    coachID: '',
-                    updatedValue: value ?? 2,
-                    index: coachIndex,
-                    toiletNumber: toiletNumber,
-                  );
-              ref
-                  .read(stationActivitiesProvider)
-                  .activity1
-                  .elementAt(coachIndex)
-                  ?.toilet1
-                  ?.log();
+            onChanged: onChanged,
+            // (value) {
+            //   onChanged;
+            //   ref
+            //       .read(stationActivitiesProvider)
+            //       .activity1
+            //       .elementAt(coachIndex)
+            //       ?.toilet1
+            //       .log();
 
-              // val.log();
-              // val = value ?? 4;
-              // setState(() {});
-            },
+            //   // val.log();
+            //   // val = value ?? 4;
+            //   // setState(() {});
+            // },
           ),
         ],
       ),

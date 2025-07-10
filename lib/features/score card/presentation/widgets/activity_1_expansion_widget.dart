@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:railway_checks_assignment/core/utils/enums/coach_number.dart';
 import 'package:railway_checks_assignment/core/utils/enums/toilet_number.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/station_activities_record_notifier.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/activity1_dropdown_widget.dart';
@@ -21,6 +20,7 @@ class Activity1ExpansionWidget extends ConsumerWidget {
         .elementAt(coachIndex);
 
     return ExpansionTile(
+      childrenPadding: EdgeInsets.only(top: 15, left: 10),
       title: Text(coachName),
       shape: RoundedRectangleBorder(),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
@@ -31,28 +31,63 @@ class Activity1ExpansionWidget extends ConsumerWidget {
           child: Row(
             spacing: 15,
             children: [
-              Text(coachCurrentData!.toilet1.toString()),
-
-              Activity1DropdownWidget(
+              // Text(coachCurrentData!.toilet1.toString()),
+              StationActivitiesDropdownWidget(
                 coachIndex: coachIndex,
-                toiletNumber: ToiletNumber.t1,
+                // toiletNumber: ToiletNumber.t1,
                 val: coachCurrentData!.toilet1,
+                dropdownText: 'T1',
+                onChanged: (value) => ref
+                    .read(stationActivitiesProvider.notifier)
+                    .updateActivity1(
+                      // coachID: '',
+                      updatedValue: value ?? 2,
+                      index: coachIndex,
+                      toiletNumber: ToiletNumber.t1,
+                    ),
               ),
-              Activity1DropdownWidget(
+              StationActivitiesDropdownWidget(
                 coachIndex: coachIndex,
-                toiletNumber: ToiletNumber.t2,
-                val: coachCurrentData!.toilet2,
+                // toiletNumber: ToiletNumber.t2,
+                val: coachCurrentData.toilet2,
+                dropdownText: 'T2',
+                onChanged: (value) => ref
+                    .read(stationActivitiesProvider.notifier)
+                    .updateActivity1(
+                      // coachID: '',
+                      updatedValue: value ?? 2,
+                      index: coachIndex,
+                      toiletNumber: ToiletNumber.t2,
+                    ),
               ),
-              Activity1DropdownWidget(
+              StationActivitiesDropdownWidget(
                 coachIndex: coachIndex,
-                toiletNumber: ToiletNumber.t3,
-                val: coachCurrentData!.toilet3,
+
+                val: coachCurrentData.toilet3,
+                dropdownText: 'T3',
+                onChanged: (value) => ref
+                    .read(stationActivitiesProvider.notifier)
+                    .updateActivity1(
+                      // coachID: '',
+                      updatedValue: value ?? 2,
+                      index: coachIndex,
+                      toiletNumber: ToiletNumber.t3,
+                    ),
               ),
 
-              Activity1DropdownWidget(
+              StationActivitiesDropdownWidget(
                 coachIndex: coachIndex,
-                toiletNumber: ToiletNumber.t4,
-                val: coachCurrentData!.toilet4,
+                // toiletNumber: ToiletNumber.t4,
+                val: coachCurrentData.toilet4,
+                dropdownText: 'T4',
+                onChanged: (value) => ref
+                    .read(stationActivitiesProvider.notifier)
+                    .updateActivity1(
+                      // coachID: '',
+                      updatedValue: value ?? 2,
+                      index: coachIndex,
+                      toiletNumber: ToiletNumber.t4,
+                    ),
               ),
             ],
           ),

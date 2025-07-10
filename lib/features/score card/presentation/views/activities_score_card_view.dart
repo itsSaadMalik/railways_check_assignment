@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_1_widget.dart';
+import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_2_widget.dart';
 
 class StationActivitiesScoreCardView extends ConsumerWidget {
   const StationActivitiesScoreCardView({super.key});
@@ -28,7 +29,18 @@ class StationActivitiesScoreCardView extends ConsumerWidget {
             'Station Activities Scorecard',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
+          Column(
+            spacing: 10,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '1. All items as below which are inaccessible should be marked ‘-1’ and shall not be counted in total score.',
+              ),
+              Text('2. Item not available should be marked ‘_’.'),
+            ],
+          ),
           StationActivity1Widget(),
+          StationActivity2Widget(),
         ],
       ),
     );
