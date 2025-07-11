@@ -1,16 +1,21 @@
 # railway_checks_assignment
 
-A new Flutter project.
+ **setup :**
+ 
+<h4>1. Clone the Repository</h4>
+-git clone https://github.com/itsSaadMalik/railways_check_assignment<br>
+-cd  railways_check_assignment<br>
+<h4>2. Install Dependencies</h4>
+-flutter pub get
+<h4>3. Run the Project </h4>
+-flutter run<br>
 
-## Getting Started
+# <h3>description :</h3>
+-The form are converted from boring old fashioned tables that are hard to read and understand to a clean mobile UI that is both simple to use and record data.<br>
+-Application sends data to remote webhook.site URL .<br>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# tech stack
+-Flutter(front-end)<br>
+-Clean Arch.<br>
+-Riverpod(statemanagement)<br>
+-webhook.site(backend for mock data storage)<br>
