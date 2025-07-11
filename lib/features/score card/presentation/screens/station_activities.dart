@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:railway_checks_assignment/core/app_theme/app_background_gradient.dart';
 import 'package:railway_checks_assignment/core/utils/extensions/log_extension.dart';
 import 'package:railway_checks_assignment/core/utils/shared/edge_insets.dart';
+import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/form_state_provider.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/station_activities_record_notifier.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/views/activities_score_card_view.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/views/station_activities_info_widget.dart';
@@ -19,6 +20,7 @@ class _StationActivitiesScreenState
     extends ConsumerState<StationActivitiesRecordScreen> {
   @override
   Widget build(BuildContext context) {
+    final formState = ref.watch(formStateProvider);
     return AppBackgroundGradient(
       body: Scaffold(
         appBar: AppBar(
@@ -41,11 +43,16 @@ class _StationActivitiesScreenState
               StationActivitiesInfoWidget(),
               Container(height: 40),
               StationActivitiesScoreCardView(),
-              // ElevatedButton(
-              //   onPressed: () =>
-              //       ref.read(stationActivitiesProvider).wOnumber.log(),
-              //   child: Text('data'),
-              // ),
+              SizedBox(height: 35),
+              ElevatedButton(
+                onPressed: () {
+                  if (formState.currentState?.validate() ?? false) {
+                  } else {}
+                  // ref.read(stationActivitiesProvider).wOnumber.log();
+                },
+                child: Text('Submit scorecard'),
+              ),
+
               // Container(
               //   height: 400,
               //   color: const Color.fromARGB(255, 255, 255, 255),

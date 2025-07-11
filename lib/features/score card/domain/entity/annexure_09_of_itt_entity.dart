@@ -19,9 +19,9 @@ class Annexuer09ITTCardEntity {
 
   final double totalScoreObtained;
   final List<CoachActivity1Model?> activity1;
-  final List<int> activity2;
+  final List<String> activity2;
   final List<CoachActivity3Model?> activity3;
-  final List<int> activity4;
+  final List<String> activity4;
 
   Annexuer09ITTCardEntity({
     required this.wOnumber,

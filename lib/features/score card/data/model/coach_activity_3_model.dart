@@ -2,11 +2,11 @@ import 'package:railway_checks_assignment/core/utils/enums/field%20names%20enums
 import 'package:railway_checks_assignment/core/utils/extensions/field%20names/coach_activity_3_string.dart';
 
 class CoachActivity3Model {
-  final int b1;
-  final int b2;
-  final int d1;
-  final int d2;
-  final int coachNumber;
+  final String b1;
+  final String b2;
+  final String d1;
+  final String d2;
+  final String coachNumber;
   final String coachId;
 
   CoachActivity3Model({
@@ -17,15 +17,19 @@ class CoachActivity3Model {
     required this.coachNumber,
     required this.coachId,
   });
-  CoachActivity3Model copyWith({int? b1, int? b2, int? d1, int? d2}) =>
-      CoachActivity3Model(
-        b1: b1 ?? this.b1,
-        b2: b2 ?? this.b2,
-        d1: d1 ?? this.d1,
-        d2: d2 ?? this.d2,
-        coachNumber: coachNumber,
-        coachId: coachId,
-      );
+  CoachActivity3Model copyWith({
+    String? b1,
+    String? b2,
+    String? d1,
+    String? d2,
+  }) => CoachActivity3Model(
+    b1: b1 ?? this.b1,
+    b2: b2 ?? this.b2,
+    d1: d1 ?? this.d1,
+    d2: d2 ?? this.d2,
+    coachNumber: coachNumber,
+    coachId: coachId,
+  );
 
   factory CoachActivity3Model.fromMap(Map<String, dynamic> data) =>
       CoachActivity3Model(

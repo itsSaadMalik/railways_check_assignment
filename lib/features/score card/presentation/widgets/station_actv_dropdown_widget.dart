@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:railway_checks_assignment/core/utils/enums/toilet_number.dart';
-import 'package:railway_checks_assignment/core/utils/extensions/log_extension.dart';
-import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/station_activities_record_notifier.dart';
 
 class StationActivitiesDropdownWidget extends ConsumerWidget {
   const StationActivitiesDropdownWidget({
@@ -13,12 +10,12 @@ class StationActivitiesDropdownWidget extends ConsumerWidget {
     required this.onChanged,
     required this.dropdownText,
   });
-  List<int> get marks => [-1, 0, 1];
+  List<String> get ratings => ['x', '0', '1', '_'];
   // final ToiletNumber toiletNumber;
   final int coachIndex;
   final String dropdownText;
 
-  final int val;
+  final String val;
   final ValueChanged onChanged;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,8 +42,11 @@ class StationActivitiesDropdownWidget extends ConsumerWidget {
             dropdownColor: Colors.white,
             borderRadius: BorderRadius.circular(10),
 
-            items: marks
-                .map((e) => DropdownMenuItem(value: e, child: Text('$e')))
+            items: ratings
+                .map(
+                  (rating) =>
+                      DropdownMenuItem(value: rating, child: Text(rating)),
+                )
                 .toList(),
             value: val,
             onChanged: onChanged,

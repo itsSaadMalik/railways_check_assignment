@@ -16,7 +16,7 @@ class StationActivitiesRecordNotifier
 
   void updateActivity1({
     // required String coachID,
-    required int updatedValue,
+    required String updatedValue,
     required int index,
     required ToiletNumber toiletNumber,
   }) {
@@ -56,8 +56,8 @@ class StationActivitiesRecordNotifier
     // state.activity1.((element) => element?.coachID == coachID);
   }
 
-  void updateActivity2({required int index, required int updatedValue}) {
-    List<int> newList = state.activity2;
+  void updateActivity2({required int index, required String updatedValue}) {
+    List<String> newList = state.activity2;
     newList[index] = updatedValue;
     state = state.copywith(activity2: newList);
     // state.activity1[index] = updatedValue;
@@ -65,7 +65,7 @@ class StationActivitiesRecordNotifier
 
   void updateActivity3({
     required Activity3ScoreFields activity,
-    required int updatedValue,
+    required String updatedValue,
     required int index,
   }) {
     switch (activity) {
@@ -87,13 +87,12 @@ class StationActivitiesRecordNotifier
         state.activity3[index] = state.activity3
             .elementAt(index)
             ?.copyWith(d2: updatedValue);
-
-        state = state;
     }
+    state = state.copywith();
   }
 
-  void updateActivity4({required int index, required int updatedValue}) {
-    List<int> newList = state.activity4;
+  void updateActivity4({required int index, required String updatedValue}) {
+    List<String> newList = state.activity4;
     newList[index] = updatedValue;
     state = state.copywith(activity4: newList);
     // state.activity1[index] = updatedValue;
@@ -173,27 +172,27 @@ final stationActivitiesProvider =
         activity1: [
           for (int i = 1; i <= 13; i++)
             CoachActivity1Model(
-              toilet1: -1,
-              toilet2: -1,
-              toilet3: -1,
-              toilet4: -1,
-              coachNumber: i,
+              toilet1: 'x',
+              toilet2: 'x',
+              toilet3: 'x',
+              toilet4: 'x',
+              coachNumber: 'x',
               coachID: 'coach_$i',
             ),
         ],
-        activity2: [for (int i = 0; i < 13; i++) -1],
+        activity2: [for (int i = 0; i < 13; i++) 'x'],
         activity3: [
           for (int i = 0; i < 13; i++)
             CoachActivity3Model(
-              b1: -1,
-              b2: -1,
-              d1: -1,
-              d2: -1,
-              coachNumber: i,
+              b1: 'x',
+              b2: 'x',
+              d1: 'x',
+              d2: 'x',
+              coachNumber: 'x',
               coachId: 'coach_$i',
             ),
         ],
-        activity4: [for (int i = 0; i < 13; i++) -1],
+        activity4: [for (int i = 0; i < 13; i++) 'x'],
       );
       return StationActivitiesRecordNotifier(preloadData);
     });

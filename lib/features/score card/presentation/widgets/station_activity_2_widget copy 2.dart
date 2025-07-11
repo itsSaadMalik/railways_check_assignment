@@ -18,25 +18,31 @@ class StationActivity2Widget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        spacing: 15,
         children: [
           Text(
             '2. Cleaning & wiping of outside washbasin, mirror & shelves in door way area.',
           ),
-          ListView.builder(
-            itemCount: coaches.length,
-            shrinkWrap: true,
-            itemBuilder: (context, coachIndex) {
-              final coachName = coaches.elementAt(coachIndex);
+          ExpansionTile(
+            title: Text('Scorecard'),
+            children: [
+              ListView.builder(
+                itemCount: coaches.length,
+                shrinkWrap: true,
+                itemBuilder: (context, coachIndex) {
+                  final coachName = coaches.elementAt(coachIndex);
 
-              return Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Activity2ExpansionWidget(
-                  coachIndex: coachIndex,
-                  coachName: coachName.name,
-                ),
-              );
-            },
-            physics: ClampingScrollPhysics(),
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Activity2ExpansionWidget(
+                      coachIndex: coachIndex,
+                      coachName: coachName.name,
+                    ),
+                  );
+                },
+                physics: ClampingScrollPhysics(),
+              ),
+            ],
           ),
         ],
       ),

@@ -4,11 +4,11 @@ import 'package:railway_checks_assignment/core/utils/extensions/toilet_number_st
 
 @immutable
 class CoachActivity1Model {
-  final int toilet1;
-  final int toilet2;
-  final int toilet3;
-  final int toilet4;
-  final int coachNumber;
+  final String toilet1;
+  final String toilet2;
+  final String toilet3;
+  final String toilet4;
+  final String coachNumber;
   final String coachID;
 
   const CoachActivity1Model({
@@ -20,10 +20,10 @@ class CoachActivity1Model {
     required this.coachID,
   });
   CoachActivity1Model copyWith({
-    int? toilet1,
-    int? toilet2,
-    int? toilet3,
-    int? toilet4,
+    String? toilet1,
+    String? toilet2,
+    String? toilet3,
+    String? toilet4,
   }) => CoachActivity1Model(
     toilet1: toilet1 ?? this.toilet1,
     toilet2: toilet2 ?? this.toilet2,

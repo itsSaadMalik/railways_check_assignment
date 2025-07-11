@@ -41,9 +41,9 @@ class Annexure09IttModel extends Annexuer09ITTCardEntity {
     int? coachesAttended,
     double? totalScoreObtained,
     List<CoachActivity1Model?>? activity1,
-    List<int>? activity2,
+    List<String>? activity2,
     List<CoachActivity3Model?>? activity3,
-    List<int>? activity4,
+    List<String>? activity4,
   }) => Annexure09IttModel(
     wOnumber: wOnumber ?? this.wOnumber,
     titleOfWork: titleOfWork ?? this.titleOfWork,

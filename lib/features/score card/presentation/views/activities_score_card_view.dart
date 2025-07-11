@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_1_widget.dart';
-import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_2_widget.dart';
+import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_4_widget.dart';
+import 'package:railway_checks_assignment/features/score%20card/presentation/widgets/station_activity_3_widget.dart';
 
 class StationActivitiesScoreCardView extends ConsumerWidget {
   const StationActivitiesScoreCardView({super.key});
@@ -27,7 +28,9 @@ class StationActivitiesScoreCardView extends ConsumerWidget {
         children: [
           Text(
             'Station Activities Scorecard',
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           Column(
             spacing: 10,
@@ -40,7 +43,9 @@ class StationActivitiesScoreCardView extends ConsumerWidget {
             ],
           ),
           StationActivity1Widget(),
-          StationActivity2Widget(),
+          StationActivity4Widget(),
+          StationActivity3Widget(),
+          StationActivity4Widget(),
         ],
       ),
     );

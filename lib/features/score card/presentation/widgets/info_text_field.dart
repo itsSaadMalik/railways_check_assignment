@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:railway_checks_assignment/features/score%20card/presentation/providers/station%20activities/station_activities_record_notifier.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class InfoTextField extends ConsumerWidget {
   const InfoTextField({
@@ -36,6 +36,7 @@ class InfoTextField extends ConsumerWidget {
                 ),
               ),
             ),
+            validator: RequiredValidator(errorText: 'fill to proceed').call,
           ),
         ],
       ),
